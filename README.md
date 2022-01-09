@@ -1,37 +1,26 @@
 
-# React Project Template
+# Financial Institution Finder
 
-A brief description of what this project does and who it's for
+A technical challenge provided during the interview process at an undisclosed company.
 
 
 ## Tech Stack
 
-**Client:** React, Axios, Bootstrap, Sass
+**Client:** Typescript, React, Axios, FluentUI
 
-**Server:** Currently not deployed
-
-
-## Installation
-
-Install my-project with npm
-
-```bash
-  npm install my-project
-  cd my-project
-```
     
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/basicjohn/financial-institution-finder.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd financial-institution-finder
 ```
 
 Install dependencies
@@ -46,7 +35,7 @@ Start the server
   npm run start
 ```
 
-
+<!-- 
 ## Lessons Learned
 
 What did you learn while building this project? What challenges did you face and how did you overcome them?
@@ -60,7 +49,7 @@ Answer 1
 
 #### Question 2
 
-Answer 2
+Answer 2 -->
 
 
 ## Authors
@@ -68,7 +57,6 @@ Answer 2
 - John Edmondson - [@basicjohn](https://www.github.com/basicjohn)
 
 
-## Acknowledgements & Sources
+## Sources
 
- - [Source - @basicjohn](https://www.github.com/basicjohn)
- - [Acknowledgements - John Edmondson](https://www.github.com/basicjohn)
+ - [Source - BankFind Suite: API for Data Miners & Developers](https://banks.data.fdic.gov/docs/)
