@@ -5,7 +5,15 @@ describe("InstitutionClient Search", () => {
     let testSearch = "***";
     return InstitutionClient.search(testSearch).then(response => {
       console.log(response);
-    expect(response.data.length).toBe(0);
+      expect(response.data.length).toBe(1);
+    });
+  });
+
+  test("Run search function that returns result", () => {
+    let testSearch = "new";
+    return InstitutionClient.search(testSearch).then(response => {
+      console.log(response);
+      expect(response.data.length).toBeGreaterThan(0);
     });
   });
 });
