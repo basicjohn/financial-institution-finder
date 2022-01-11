@@ -13,7 +13,7 @@ class InstitutionClient {
       .get("/institutions", {
         params: {
           search: `name:${searchQuery}`,
-          fields: "ZIP,OFFDOM,CITY,COUNTY,STNAME,STALP,NAME,ACTIVE,CERT,CBSA,ASSET,NETINC,DEP,DEPDOM,ROE,ROA,DATEUPDT,OFFICES,ID",
+          fields: "ZIP,OFFDOM,CITY,COUNTY,STNAME,STALP,NAME,ACTIVE,CERT,CBSA,ASSET,NETINC,DEP,DEPDOM,ROE,ROA,DATEUPDT,OFFICES,ID,WEBADDR",
           sort_by: "OFFICES",
           sort_order: "DESC",
           format:  "json"
