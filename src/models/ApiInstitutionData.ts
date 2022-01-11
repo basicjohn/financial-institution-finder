@@ -1,6 +1,7 @@
 export default interface ApiInstitutionData {
   id: string,
   name?: string,
+  specgrpn?: string,
   city?: string,
   county?: string,
   stname?: string,
@@ -17,4 +18,7 @@ export default interface ApiInstitutionData {
   active?: number,
   dep?: number,
   cbsa?: string,
+  address?: string,
+  address2?: string,
+  fed_rssd?: string
 }
