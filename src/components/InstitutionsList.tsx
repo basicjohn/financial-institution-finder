@@ -13,13 +13,14 @@ const InstitutionList:React.FC = () => {
   let [institutions, setInstitutions] = useState<ApiInstitution[]>([]);
   let [search , setSearch] = useState<string>("");
 
-  const handleChangeText = (ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue: any) =>{
+  const handleChangeText = (ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue: any) => {
     const { value } = ev.currentTarget;
     setSearch(value);
   }
 
   const handleSubmit = async () => {
-    await InstitutionClient.search(search);
+    const searchResponse = await InstitutionClient.search(search);
+    setInstitutions(searchResponse);
   };
 
   return (

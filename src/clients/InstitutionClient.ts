@@ -13,15 +13,15 @@ class InstitutionClient {
       .get("/institutions", {
         params: {
           search: `name:${searchQuery}`,
-          fields: "ZIP,OFFDOM,CITY,COUNTY,STNAME,STALP,NAME,ACTIVE,CERT,CBSA,ASSET,NETINC,DEP,DEPDOM,ROE,ROA,DATEUPDT,OFFICES,ID,WEBADDR,ADDRESS,ADDRESS2,FED_RSSD",
+          fields: "ZIP,OFFDOM,CITY,COUNTY,STNAME,STALP,NAME,ACTIVE,CERT,CBSA,ASSET,NETINC,DEP,DEPDOM,ROE,ROA,DATEUPDT,OFFICES,ID,WEBADDR,ADDRESS,ADDRESS2,FED_RSSD,SPECGRPN",
           sort_by: "OFFICES",
           sort_order: "DESC",
           format:  "json"
         }
       })
       .then ((res: any) => {
-        console.log(res.data);
-        return res.data;
+        console.log(res.data.data);
+        return res.data.data;
       })
       // .then((res: any) => {
       //   return res;
