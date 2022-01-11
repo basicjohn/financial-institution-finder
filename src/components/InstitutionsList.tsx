@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { createRef, useState } from 'react';
 import { TextField } from '@fluentui/react/lib/TextField';
 import { DetailsList, DetailsListLayoutMode, IColumn, CheckboxVisibility } from '@fluentui/react/lib/DetailsList';
 import { iColumns } from '../utilities/InstitutionsTableColumns';
@@ -8,18 +8,19 @@ import InstitutionClient from '../clients/InstitutionClient';
 
 
 const InstitutionList:React.FC = () => {
-  let favoriteInstitutions = []
-  let [institutions, setInstitutions] = React.useState<ApiInstitution[]>([]);
-  const [state, setState] = React.useState({
-    text: "",
-    searchType: "Organization",
-  })
-  const _onSubmit = async (ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, text: string) => {
-    setInstitutions = await InstitutionClient.search(text);
-    ev.preventDefault();
+  const formRef = createRef<HTMLFormElement>()
+  let favoriteInstitutions = useState<ApiInstitution[]>([]);
+  let [institutions, setInstitutions] = useState<ApiInstitution[]>([]);
+  let [search , setSearch] = useState<string>("");
+
+  const handleChangeText = (ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue: any) =>{
+    const { value } = ev.currentTarget;
+    setSearch(value);
+  }
+
+  const handleSubmit = async () => {
+    await InstitutionClient.search(search);
   };
-
-
 
   return (
     <div className="ms-Grid container">
@@ -28,13 +29,15 @@ const InstitutionList:React.FC = () => {
           <h1>Institution List</h1>
           <hr/>
           <div>
-            <form>
-              <TextField
-              label="Search:"
-              name="Search" />
-              <button type="submit" onChange={(
-                  ev: React.ChangeEvent<HTMLInputElement>,
-                  ) => _onSubmit(ev, state.text)}>Search</button>
+            <form
+              ref={formRef}
+              onSubmit={(e: React.SyntheticEvent) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+            >
+              <TextField label="Search:" type="text" name="Search" value={search} onChange={handleChangeText} />
+              <input type="submit" value="Search" />
             </form>
             <DetailsList
               items={institutions}
