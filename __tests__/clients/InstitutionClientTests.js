@@ -17,6 +17,11 @@ describe("InstitutionClient.search", () => {
 });
 
 
-describe("InstitutionClient.favorite", () => {
-  
-});
+// describe("InstitutionClient.favorite", () => {
+//   test("Run search function with ID that returns specific institution", () => {
+//     let favorite = "8108";
+//     return InstitutionClient.favorite(favorite).then(response => {
+//       expect(response.data[1].data.id).toBe(1931);
+//     });
+//   });
+// });
