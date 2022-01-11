@@ -1,13 +1,13 @@
 import {IColumn} from '@fluentui/react/lib/DetailsList';
-import { DefaultButton } from '@fluentui/react';
-import { Link } from 'react-router-dom';
+// import { DefaultButton } from '@fluentui/react';
+// import { Link } from 'react-router-dom';
 
 import ApiInstitution from '../models/ApiInstitution';
-import {_institutionRef} from './tableHelpers';
+// import {_institutionRef} from './tableHelpers';
 
 const column1: IColumn = {
   key: '0',
-  name: 'institution',
+  name: 'Status',
   fieldName: 'active',
   minWidth: 50,
   maxWidth: 80,
@@ -108,16 +108,16 @@ const column4: IColumn = {
     maxWidth: 70,
     data: 'string',
     onRender: (institution: ApiInstitution) => {
-      return (
-        <DefaultButton>
-          <Link ref={_institutionRef}  to={{ pathname: `/institutions/`+ institution.data.fed_rssd , state:{ selectedInstitution: institution.data.fed_rssd } }}>
-            View Details
-          </Link>
-        </DefaultButton>
-      )
+      // return (
+      //   <DefaultButton>
+      //     <Link ref={_institutionRef}  to={{ pathname: `/institutions/`+ institution.data.fed_rssd , state:{ selectedInstitution: institution.data.fed_rssd } }}>
+      //       View Details
+      //     </Link>
+      //   </DefaultButton>
+      // )
     }
   }
 
-export const  iColumns: IColumn[] = [
+export const iColumns: IColumn[] = [
   column1, column2, column3, column4, column5, column6, column7, column8
 ];

@@ -8,7 +8,7 @@ const HeaderView:React.FC = () => {
       <header>
         <div>
           <Link to={{ pathname: `/institutions/`}}>
-            <h1>Finantial Institution Finder</h1>
+            <h1>Financial Institution Finder</h1>
           </Link>
         </div>
       </header>
